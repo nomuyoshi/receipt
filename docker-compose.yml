@@ -1,0 +1,10 @@
+version: "3.8"
+services:
+  receipt:
+    build: .
+    container_name: receipt
+    volumes:
+      - .:/app
+    tty: true
+    env_file:
+      - .env
