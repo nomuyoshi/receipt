@@ -1,4 +1,5 @@
 mineo:
-  url: https://login.eonet.jp/auth/Login/mineo
   id: <%= ENV["MINEO_ID"] %>
   password: <%= ENV["MINEO_PASSWORD"] %>
+  login_url: https://login.eonet.jp/auth/Login/mineo
+  billing_url: https://mypage.eonet.jp/Bill/details
