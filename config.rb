@@ -6,7 +6,7 @@ module AppConfig
   PATH = "config.yml"
 
   def self.load
-    @app_config = YAML.load(ERB.new(File.read(PATH)).result)
+    @app_config = YAML.load(ERB.new(File.read(PATH)).result) unless @app_config
     Config.new(@app_config)
   end
 end

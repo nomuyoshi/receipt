@@ -1,3 +1,6 @@
+global:
+  download_dir: /app/downloads
+
 mineo:
   id: <%= ENV["MINEO_ID"] %>
   password: <%= ENV["MINEO_PASSWORD"] %>
