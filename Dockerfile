@@ -8,7 +8,10 @@ RUN echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/so
 RUN apt update -y && apt install -y libnss3 google-chrome-stable
 
 WORKDIR /app
+# Chromeを動かすとにrootユーザーだと --no-sandboxオプションを有効にする必要がある
+# これを避けるためにユーザー作成し、docker-composeで capability SYS_ADMINを追加
 RUN useradd -m developer && chown -R developer:developer /app
+USER developer
 COPY Gemfile .
 COPY Gemfile.lock .
 RUN bundle install
