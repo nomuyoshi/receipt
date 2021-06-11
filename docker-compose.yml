@@ -5,8 +5,8 @@ services:
     container_name: receipt
     volumes:
       - .:/app
-    tty: true
+    tty: true # コンテナを起動させ続けるため
     env_file:
       - .env
     cap_add:
-      - SYS_ADMIN
+      - SYS_ADMIN # Dockerfileで作成したユーザーでchrome起動するためにcapability SYS_ADMINを追加
